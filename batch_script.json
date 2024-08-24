@@ -1,0 +1,43 @@
+{
+    "taskGroups": [
+      {
+        "taskSpec": {
+          "runnables": [
+            {
+              "script": {
+                "text": "bash /home/scripts/sqlmesh_job.sh"
+              }
+            }
+          ],
+          "volumes": [
+            {
+              "gcs": {
+                "remotePath": "ga4_obfuscated_sample_ecommerce"
+              },
+              "mountPath": "/home"
+            }
+          ],
+          "maxRetryCount": 2,
+          "maxRunDuration": "600s"
+        },
+        "taskCount": 1,
+        "parallelism": 1
+      }
+    ],
+    "allocationPolicy": {
+      "instances": [
+        {
+          "policy": {
+            "machineType": "e2-micro"
+            }
+        }
+      ]
+    },
+    "labels": {
+      "department": "tech",
+      "env": "test"
+    },
+    "logsPolicy": {
+      "destination": "CLOUD_LOGGING"
+    }
+  }

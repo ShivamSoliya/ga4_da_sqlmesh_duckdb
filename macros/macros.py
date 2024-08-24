@@ -6,7 +6,7 @@ def get_date_range_list(evaluator):
     start_date = datetime.date(2021, 1, 31)
     end_date = datetime.date(2021, 1, 31)
     
-    return [[f"/mnt/{date}/*" 
+    return [[f"/home/{date}/*" 
              for date in [(start_date + datetime.timedelta(days=i)).strftime('%Y%m%d') 
                 for i in range((end_date - start_date).days + 1)]]]
 
