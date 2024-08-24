@@ -11,6 +11,10 @@ def get_date_range_list(evaluator):
                 for i in range((end_date - start_date).days + 1)]]]
 
 @macro()
+def get_output_uri(evaluator):
+    return f"/mnt/output/{int(datetime.utcnow().timestamp())}/latest_session.csv"
+                
+@macro()
 def get_param_value(evaluator, param, target_key: str):
     return f"(SELECT {param}.key.value.int_value WHERE ep.key.key = '{target_key}' limit 1)"
 
