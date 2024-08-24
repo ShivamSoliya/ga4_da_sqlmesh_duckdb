@@ -6,10 +6,8 @@ set -e
 # Variables
 SQLMESH_REPO="https://github.com/ShivamSoliya/ga4_da_sqlmesh_duckdb.git"
 WORKING_DIR="/tmp/project"
-DUCKDB_HOME_DIR="/tmp/duckdb_home"
 
 # Install necessary tools
-python3 -m venv duck
 sudo apt-get install -y git python3-pip
 
 # Create working directory
@@ -22,13 +20,15 @@ git clone $SQLMESH_REPO sqlmesh
 
 # Install SQLMesh dependencies
 echo "Installing SQLMesh dependencies..."
-cd sqlmesh
-pip install sqlmesh
 export PATH=$PATH:/usr/local/bin
+cd sqlmesh
+pip3 install sqlmesh
 
 # Set up the DuckDB home directory
-mkdir -p $DUCKDB_HOME_DIR
-export home_directory=$DUCKDB_HOME_DIR
+echo "Home:$HOME"
+mkdir -p $WORKING_DIR
+export HOME=$WORKING_DIR
+echo "Home:$HOME"
 
 # Run SQLMesh with the specified command
 echo "Executing SQLMesh plan..."

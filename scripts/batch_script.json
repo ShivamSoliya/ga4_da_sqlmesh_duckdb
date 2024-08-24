@@ -5,7 +5,7 @@
           "runnables": [
             {
               "script": {
-                "text": "bash /home/scripts/sqlmesh_job.sh"
+                "text": "bash /mnt/scripts/sqlmesh_job.sh"
               }
             }
           ],
@@ -14,7 +14,7 @@
               "gcs": {
                 "remotePath": "ga4_obfuscated_sample_ecommerce"
               },
-              "mountPath": "/home"
+              "mountPath": "/mnt"
             }
           ],
           "maxRetryCount": 2,
