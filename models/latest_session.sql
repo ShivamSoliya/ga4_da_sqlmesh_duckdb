@@ -17,5 +17,5 @@ WINDOW UserWindow AS (PARTITION BY user_pseudo_id ORDER BY event_timestamp DESC)
 
 @IF(
   @runtime_stage = 'creating',
-  COPY sqlmesh_example.latest_session TO @get_output_uri
+  COPY sqlmesh_example.latest_session TO @get_output_uri()
 );
