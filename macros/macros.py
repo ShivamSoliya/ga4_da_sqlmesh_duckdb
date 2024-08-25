@@ -13,7 +13,7 @@ def get_date_range_list(evaluator):
 
 @macro()
 def get_output_uri(evaluator):
-    return f"/mnt/output/{datetime.now(pytz.timezone('Asia/Kolkata')).strftime('%Y%m%d/%H%M%S')}/latest_session.csv"
+    return f"'/mnt/output/{datetime.now(pytz.timezone('Asia/Kolkata')).strftime('%Y%m%d_%H%M%S')}_latest_session.csv'"
                 
 @macro()
 def get_param_value(evaluator, param, target_key: str):
